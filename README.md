@@ -39,15 +39,7 @@ pip install -r requirements.txt
 
 ## Running the Project
 
-### 1. Start the Processor Bot
-
-The Processor Bot initiates and processes all transactions. You only need to run this once:
-
-```bash
-python processor.py
-```
-
-### 2. Start the Address Exchange Bot
+### 1. Start the Address Exchange Bot
 
 This bot handles user authentication. Run it once to handle all users:
 
@@ -55,14 +47,28 @@ This bot handles user authentication. Run it once to handle all users:
 python address_exchange.py
 ```
 
-### 3. Start User Bots and UI
+### 2. Start User Bots
 
-Each user needs their own bot and UI instance. You can run multiple instances, one for each user:
+Each user needs their own bot instance. You can run multiple instances, one for each user:
 
 ```bash
 python user.py
+```
+
+> This will ask for a `name` and a `code`(use for uthorization while paying) and will provide a `UID` for each user.
+> This `UID` will be used in login while interacting with UI.
+
+### 3. Start User UI
+
+Each user needs their UI instance. You can run multiple instances, one for each user:
+
+```bash
 python ui.py  # Starts the UI for the user to preview and scan QR codes
 ```
+
+> Here you have to enter the `UID` of the user to login.
+> You will get the user's QR code that can be used to recieve the payment.
+> Or you can scan another QR to send funds to them.
 
 ## How It Works
 
@@ -74,3 +80,7 @@ python ui.py  # Starts the UI for the user to preview and scan QR codes
 ## Contributing
 
 Feel free to submit issues or pull requests to improve the project.
+
+## Collabration
+
+This project is created with support of `Fetch.ai Innovation Lab`, Meerut Institute of Engineering and Technology, Meerut, Uttar Pradesh, India.
